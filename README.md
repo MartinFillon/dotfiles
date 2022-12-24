@@ -9,8 +9,10 @@ sudo dnf upgrade
 replace .bashrc
 
 ## emacs
-install company mode => ```M-x package-install RET company RET```
-```(add-hook 'after-init-hook 'global-company-mode)```
+install company mode => ```
+M-x package-install RET company RET
+(add-hook 'after-init-hook 'global-company-mode)
+```
 
 ## Jetbrains suite
 https://www.jetbrains.com/fr-fr/toolbox-app/
