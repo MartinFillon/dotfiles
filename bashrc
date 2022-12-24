@@ -24,7 +24,8 @@ if [ -d ~/.bashrc.d ]; then
 	done
 fi
 
-export PS1="\e[0;36m[\W]: \e[m"
+export PS1="\e[0;36m[\W:\e[0;32m[\$?]\e[0;36m]: \e[m"
+export PATH="~/scripts:$PATH"
 alias reload=". ~/.bashrc"
 alias ll="ls -la"
 alias ..="cd .."
