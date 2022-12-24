@@ -9,7 +9,8 @@ sudo dnf upgrade
 replace .bashrc
 
 ## emacs
-install company mode => ```
+install company mode => 
+```
 M-x package-install RET company RET
 (add-hook 'after-init-hook 'global-company-mode)
 ```
