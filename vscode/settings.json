@@ -1,0 +1,30 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "files.autoSave": "afterDelay",
+    "clangd.fallbackFlags": [
+        "-I{workspaceFolder}/include"
+    ],
+    "clangd.path": "/home/fexkoser/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd",
+    "clangd.checkUpdates": true,
+    "workbench.iconTheme": "vscode-icons",
+    "epitech-c-cpp-headers.headerType": "post2017",
+    "epitech-c-cpp-headers.usePragmaOnce": false,
+    "epitech-c-cpp-headers.autoGenerateClasses": true,
+    "epitech-c-cpp-headers.indentAccessSpecifiers": true,
+    "workbench.colorTheme": "Red",
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false
+}
