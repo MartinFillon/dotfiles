@@ -18,7 +18,6 @@
     "epitech-c-cpp-headers.usePragmaOnce": false,
     "epitech-c-cpp-headers.autoGenerateClasses": true,
     "epitech-c-cpp-headers.indentAccessSpecifiers": true,
-    "workbench.colorTheme": "Red",
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
@@ -26,5 +25,13 @@
         "editor.defaultFormatter": "xaver.clang-format"
     },
     "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "editor.snippetSuggestions": "none",
+    "editor.snippets.codeActions.enabled": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "epitech-c-cpp-headers.username": "",
+    "epitech-c-cpp-headers.login": "",
+    "editor.inlayHints.enabled": "off",
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Solarized Dark"
 }
