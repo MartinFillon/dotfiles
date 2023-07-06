@@ -70,7 +70,7 @@ ZSH_THEME="murilasso"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# ZSH_CUSTOM=/path/to/DESKTOP_SESSION=ubuntunew-custom-folder
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -109,10 +109,21 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="exa -lha --git"
+# alias ohmyzsh="mate ~/.oh-my-zsh
+
+if ! [[ $UBUNTU == "1" ]]
+then
+	alias ls="exa -lha --git"
+else
+	alias ls="exa -lha"
+fi
+
 alias pm="sudo pacman"
 alias lgout="hyprctl dispatch exit"
 alias mk="make -s"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/mfn/.local/share/coursier/bin"
+export PATH="$PATH:/home/mfn/.local/share/coursier/bin"
+alias npmcheck='npm-check -u -E'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
