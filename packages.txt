@@ -9,3 +9,6 @@ code
 docker
 sddm
 neovim
+wlogout
+swaylock
+wofi
