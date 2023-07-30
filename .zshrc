@@ -33,7 +33,6 @@ archlinux() {
 	alias lgout="hyprctl dispatch exit"
 	alias mk="make -s"
 	alias npmcheck='npm-check -u -E'
-	
 }
 
 fedora() {
@@ -49,7 +48,7 @@ then
 	ubuntu
 fi
 
-hostnamectl | grep "Archlinux"  > /dev/null
+hostnamectl | grep "archlinux"  > /dev/null
 if [[ $? -eq 0 ]]
 then
 	archlinux
