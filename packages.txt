@@ -1,4 +1,5 @@
 neofetch
+kitty
 exa
 htop
 git
@@ -6,3 +7,13 @@ discord
 code
 docker
 neovim
+nodejs
+curl
+nvm
+jq
+grim
+swappy
+man
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
