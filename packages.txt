@@ -2,13 +2,7 @@ neofetch
 exa
 htop
 git
-hyprland
-waybar
 discord
 code
 docker
-sddm
 neovim
-wlogout
-swaylock
-wofi
