@@ -33,13 +33,14 @@ archlinux() {
 	alias lgout="hyprctl dispatch exit"
 	alias mk="make -s"
 	alias npmcheck='npm-check -u -E'
+  	export PACKAGE_LIST=$DOTFILES/packages.txt
+	export CONFIG_DIR=$HOME/.config
 }
 
 fedora() {
 	alias ls="exa -lha --git"
 	alias mk="make -s"
 	alias npmcheck='npm-check -u -E'
-
 }
 
 hostnamectl | grep "Ubuntu"  > /dev/null
@@ -67,3 +68,10 @@ export PATH="$PATH:/home/mfn/.local/share/coursier/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export DOTFILES=/home/fexkoser/.dotfiles
+export DOTFILES=/home/fexkoser/.dotfiles
+export DOTFILES=/home/fexkoser/.dotfiles
+export DOTFILES=/home/fexkoser/.dotfiles
+export DOTFILES=/home/fexkoser/.dotfiles
+export DOTFILES=/home/fexkoser/.dotfiles
+export DOTFILES=/home/fexkoser/.dotfiles

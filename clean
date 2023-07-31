@@ -1,3 +1,0 @@
-#! /bin/bash
-
-find -type f -path "*~" -delete -o -type f -path "*#*" -delete
