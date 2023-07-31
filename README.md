@@ -1,46 +1,29 @@
-# config
+# Dotfiles
 
-## General :
-```
-sudo dnf upgrade --no-gpg-check
-sudo dnf upgrade
-```
+## Install
 
-replace .bashrc
-
-## emacs
-install company mode => 
-```
-M-x package-install RET company RET
-(add-hook 'after-init-hook 'global-company-mode)
+```sh
+git clone https://github.com/MartinFillon/dotfiles.git
+cd dotfiles
+./arch-install
 ```
 
-## Jetbrains suite
-https://www.jetbrains.com/fr-fr/toolbox-app/
-```
-tar -xvf jetbrains-toolbox-1.27.1.13673.tar.gz && cd jetbrains-toolbox-1.27.1.13673/ && ./jetbrains-toolbox
-```
+## Options
 
-## discord
+```sh
+./arch-install --no-aur
 ```
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf update
-sudo dnf install discord
-```
+Uses [pacman](https://wiki.archlinux.org/title/pacman) instead of [yay](https://github.com/Jguer/yay)
 
-## github
+```sh
+./arch-install -s [app]
 ```
-ssh-keygen
-```
+Install only **one** app (hypr sddm waylock waybar wofi zsh cava)\
+Note: to use **-s** with the other options you need to place it last
 
-## gnome
+```sh
+./arch-install --no-install
+./arch-install --re-link
 ```
-sudo dnf -y group install "Basic Desktop"
-sudo dnf -y groupinstall "GNOME Desktop Environment"
-```
+Only applies the hard links
 
-## utilities
-```
-sudo dnf install graphviz kcachegrind
-sudo dnf install htop exa
-```
