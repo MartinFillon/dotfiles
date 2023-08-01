@@ -1,5 +1,5 @@
 #!/bin/bash
-apps=("hypr" "sddm" "swaylock" "waybar" "wofi" "zsh" "cava")
+apps=("hypr" "sddm" "swaylock" "waybar" "wofi" "zsh" "cava" "grub")
 
 if [ -z "${CONFIG_DIR+x}" ]; then
     echo "export CONFIG_DIR=$HOME/.config" >> zsh/.zshrc

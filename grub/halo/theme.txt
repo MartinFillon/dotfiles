@@ -1,0 +1,50 @@
+# Global properties
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#000000"
+terminal-font: "Halo 32"
+terminal-box: "terminal_box_*.png"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
+# Boot menu
++ boot_menu {
+  left = 15%
+  top = 20%
+  width = 70%
+  height = 60%
+  item_font = "Halo 32"
+  item_color = "#B2BEB5"
+  selected_item_color = "#ffffff"
+  item_height = 48
+  item_spacing = 8
+  item_icon_space = 12
+  item_pixmap_style = "item_*.png"
+  selected_item_pixmap_style = "selected_item_*.png"
+}
+
+# Countdown message
++ label {
+  left = 0
+  top = 98%-70
+  width = 100%
+  align = "center"
+  id = "__timeout__"
+  text = "Booting in %d seconds"
+  color = "#B2BEB5"
+  font = "Halo 32"
+}
+
+# Navigation keys hint
++ label {
+  left = 0
+  top = 98%-30
+  width = 100%
+  align = "center"
+  text = "Use ↑ and ↓ keys to change selection, Enter to confirm"
+  color = "#B2BEB5"
+  font = "Halo 32"
+}
