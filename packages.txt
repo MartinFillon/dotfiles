@@ -17,3 +17,4 @@ man
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+thunar
