@@ -1,6 +1,6 @@
 #! /bin/bash
 
-if [ ! -f /boot/grub/themes/halo ]; then
+if [ ! -d /boot/grub/themes/halo ]; then
     sudo mkdir /boot/grub/themes/halo
 fi
 
