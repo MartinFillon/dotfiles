@@ -64,6 +64,7 @@ fi
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/mfn/.local/share/coursier/bin"
 export PATH="$PATH:/home/mfn/.local/share/coursier/bin"
+export PATH="$PATH:$HOME/.dotfiles/scripts"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
