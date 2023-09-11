@@ -1,6 +1,6 @@
 neofetch
 kitty
-exa
+eza
 htop
 git
 discord

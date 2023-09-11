@@ -28,7 +28,7 @@ ubuntu() {
 }
 
 archlinux() {
-	alias ls="exa -lha --git"
+	alias ls="eza -lha --git --icons"
 	alias pm="sudo pacman"
 	alias lgout="hyprctl dispatch exit"
 	alias mk="make -s"
@@ -69,10 +69,4 @@ export PATH="$PATH:$HOME/.dotfiles/scripts"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export DOTFILES=/home/fexkoser/.dotfiles
-export DOTFILES=/home/fexkoser/.dotfiles
-export DOTFILES=/home/fexkoser/.dotfiles
-export DOTFILES=/home/fexkoser/.dotfiles
-export DOTFILES=/home/fexkoser/.dotfiles
-export DOTFILES=/home/fexkoser/.dotfiles
 export DOTFILES=/home/fexkoser/.dotfiles
