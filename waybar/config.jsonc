@@ -10,7 +10,8 @@
     "modules-center": ["hyprland/window"],
     "modules-right": ["network", "bluetooth", "temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray"],
     "hyprland/window": {
-        "format": "{}"
+        "format": "{}",
+        "separate-outputs": true
     },
 
     "wlr/workspaces": {
