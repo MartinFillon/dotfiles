@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 ubuntu() {
 	export DEV_HOME=$HOME/dev
 	export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
-	alias ls="exa -lha"
+	alias ls="eza -lha --git --git-repos --icons"
 	alias npmcheck='npm-check -u -E'
 
 }
@@ -69,6 +69,5 @@ export PATH="$PATH:$HOME/.dotfiles/scripts"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export DOTFILES=/home/fexkoser/.dotfiles
 
 export GPG_TTY=$(tty)
