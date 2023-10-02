@@ -71,3 +71,5 @@ export PATH="$PATH:$HOME/.dotfiles/scripts"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export GPG_TTY=$(tty)
+export CONFIG_DIR=/home/mfn/.config
+export DOTFILES=/home/mfn/dev/dotfiles

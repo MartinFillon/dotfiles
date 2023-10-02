@@ -1,7 +1,7 @@
 width=600
 height=350
 location=center
-show=drun
+show=drun,run
 prompt=Ratio...
 filter_rate=100
 allow_markup=true

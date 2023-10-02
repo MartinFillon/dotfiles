@@ -2,10 +2,12 @@
 apps=("hypr" "sddm" "swaylock" "waybar" "wofi" "zsh" "cava" "grub")
 
 if [ -z "${CONFIG_DIR+x}" ]; then
+    export CONFIG_DIR=$HOME/.config
     echo "export CONFIG_DIR=$HOME/.config" >> zsh/.zshrc
 fi
 
 if [ -z "${DOTFILES+x}" ]; then
+    export DOTFILES=$PWD
     echo "export DOTFILES=$PWD" >> zsh/.zshrc
 fi
 
@@ -40,7 +42,7 @@ for (( arg=1; arg<=$#; arg++)); do
             exit 1
         fi
         for app in "${apps[@]}"; do
-            if [[ $app == ${!next} ]]; then
+            if [[ $app == $next ]]; then
                 echo "Installing $app"
                 $DOTEFILES/"$app"/setup.sh "$manager" "$install"
                 exit 0
