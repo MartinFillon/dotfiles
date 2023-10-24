@@ -8,7 +8,7 @@
     "height": 50,
     "modules-left": ["clock", "hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "bluetooth", "temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray"],
+    "modules-right": ["network", "bluetooth", "temperature","custom/power_profile","battery", "pulseaudio","pulseaudio#microphone","tray"],
     "hyprland/window": {
         "format": "{}"
     },
@@ -16,19 +16,7 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "on-click": "activate",
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
-        }
+        "on-click": "activate"
     },
     
     "custom/power_profile":{
@@ -40,14 +28,6 @@
         "signal": 8
     },
 
-//    "custom/weather" : {
-//         //shows the current weather and forecast
-//         "tooltip" : true,
-//         "format" : "{}",
-//         "interval" : 30,
-//         "exec" : "$CONFIG_DIR/waybar/scripts/waybar-wttr.py",
-//         "return-type" : "json"
-//     },
 
     "tray": {
         "icon-size": 18,
@@ -57,15 +37,6 @@
     "clock": {
         "format": "{: %I:%M %p   %a, %b %e}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
-        "min-length": 6
     },
 
     "battery": {

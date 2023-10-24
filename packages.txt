@@ -18,3 +18,5 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 thunar
+netdata
+asusctl

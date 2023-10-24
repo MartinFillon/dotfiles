@@ -65,9 +65,11 @@ fi
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/mfn/.local/share/coursier/bin"
 export PATH="$PATH:/home/mfn/.local/share/coursier/bin"
 export PATH="$PATH:$HOME/.dotfiles/scripts"
-
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export GPG_TTY=$(tty)
+
+if [ -e /home/fexkoser/.nix-profile/etc/profile.d/nix.sh ]; then . /home/fexkoser/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
