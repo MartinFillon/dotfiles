@@ -69,6 +69,10 @@ if [ $install == false ]; then
 fi
 for line in $(cat packages.txt); then
     echo "Installing $line"
+    if [[ $line == "netdata" ]]; then
+        curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh --nightly-channel --claim-token $NETDATA_TOKEN --claim-rooms $NETDATA_ROOMS --claim-url https://app.netdata.cloud
+        continue
+    fi
     manager -S "$line"
 done
 ssh-keygen
