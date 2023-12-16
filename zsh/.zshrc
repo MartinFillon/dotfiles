@@ -28,7 +28,7 @@ ubuntu() {
 }
 
 archlinux() {
-	alias ls="eza -lha --git --icons"
+	alias ls="eza -lha --git --icons --git-repos"
 	alias pm="sudo pacman"
 	alias lgout="hyprctl dispatch exit"
 	alias mk="make -s"
