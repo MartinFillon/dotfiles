@@ -33,7 +33,7 @@ archlinux() {
 	alias lgout="hyprctl dispatch exit"
 	alias mk="make -s"
 	alias npmcheck='npm-check -u -E'
-  	export PACKAGE_LIST=$DOTFILES/packages.txt
+  export PACKAGE_LIST=$DOTFILES/packages.txt
 	export CONFIG_DIR=$HOME/.config
 }
 
