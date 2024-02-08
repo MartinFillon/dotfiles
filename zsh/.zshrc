@@ -33,8 +33,13 @@ archlinux() {
 	alias lgout="hyprctl dispatch exit"
 	alias mk="make -s"
 	alias npmcheck='npm-check -u -E'
+  alias neofetch='hayabusa'
   export PACKAGE_LIST=$DOTFILES/packages.txt
 	export CONFIG_DIR=$HOME/.config
+  alias fourmolu="$HOME/.cabal/bin/fourmolu -i"
+  alias fgrind="valgrind --leak-check=full"
+  alias eza-bleeding="~/dev/rust/eza/target/debug/eza"
+  alias build-eza="cd ~/dev/rust/eza/ && cargo build && cd -"
 }
 
 fedora() {
@@ -66,6 +71,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 export PATH="$PATH:/home/mfn/.local/share/coursier/bin"
 export PATH="$PATH:$HOME/.dotfiles/scripts"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.ghcup/bin"
+export PAtH="$PATH:$HOME/.cabal/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
