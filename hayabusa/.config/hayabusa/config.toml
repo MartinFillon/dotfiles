@@ -1,0 +1,37 @@
+[spacing]
+middle_padding = 4
+
+[spacing.inner_padding]
+top = 1
+bottom = 1
+left = 2
+right = 2
+
+[spacing.outer_padding]
+top = 0
+bottom = 0
+left = 0
+right = 0
+
+[border]
+enabled = true
+ansi_color = "{{color11}}"
+
+[border.border_chars]
+top_left = "╭"
+top_right = "╮"
+bottom_left = "╰"
+bottom_right = "╯"
+horizontal = "─"
+vertical = "│"
+
+[ascii_art]
+size = "Big"
+placement = "Left"
+alignment = "Center"
+ascii_art_file = ""
+
+[ascii_art.backend]
+engine = "Ascii"
+image_path = ""
+image_width = 50

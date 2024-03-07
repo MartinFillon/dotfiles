@@ -6,19 +6,68 @@ STOW ?= stow
 
 TARGET ?= $$HOME
 
-all: zsh hyprland kitty
+all: _zsh _hyprland _kitty
 
-zsh:
+_zsh:
 	$(STOW) --target=$(TARGET) --restow zsh
 
-hyprland:
+_hyprland:
 	$(STOW) --target=$(TARGET) --restow hyprland
 
-kitty:
+_kitty:
 	$(STOW) --target=$(TARGET) --restow kitty
 
-fclean:
-	$(STOW) --target=$(TARGET) --delete zsh 
-	$(STOW) --target=$(TARGET) --delete hyprland 
+_wofi:
+	$(STOW) --target=$(TARGET) --restow wofi
 
-.PHONY: hyprland zsh all kitty
+
+_wlogout:
+	$(STOW) --target=$(TARGET) --restow wlogout
+
+
+_swaylock:
+	$(STOW) --target=$(TARGET) --restow swaylock
+
+
+_BetterDiscord:
+	$(STOW) --target=$(TARGET) --restow BetterDiscord
+
+
+_cava:
+	$(STOW) --target=$(TARGET) --restow cava
+
+
+_hayabusa:
+	$(STOW) --target=$(TARGET) --restow hayabusa
+
+
+_helix:
+	$(STOW) --target=$(TARGET) --restow helix
+
+
+_htop:
+	$(STOW) --target=$(TARGET) --restow htop
+
+
+_nix:
+	$(STOW) --target=$(TARGET) --restow nix
+
+
+_nvim:
+	$(STOW) --target=$(TARGET) --restow nvim
+
+
+_waybar:
+	$(STOW) --target=$(TARGET) --restow waybar
+
+
+_yay:
+	$(STOW) --target=$(TARGET) --restow yay
+
+
+_pulse:
+	$(STOW) --target=$(TARGET) --restow pulse
+
+
+_teams-for-linux:
+	$(STOW) --target=$(TARGET) --restow teams-for-linux

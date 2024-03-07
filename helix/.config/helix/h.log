@@ -1,0 +1,3 @@
+2024-02-12T12:55:07.711 helix_view::editor [ERROR] Failed to initialize the language servers for `source.toml` - `taplo` { cannot find binary path }
+2024-02-12T12:55:59.425 helix_view::editor [ERROR] Failed to initialize the language servers for `source.toml` - `taplo` { cannot find binary path }
+2024-02-12T12:56:14.073 helix_view::editor [ERROR] Failed to initialize the language servers for `source.toml` - `taplo` { cannot find binary path }
