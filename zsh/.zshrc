@@ -28,7 +28,7 @@ ubuntu() {
 }
 
 archlinux() {
-	alias ls="eza -lha --git --icons --git-repos"
+	alias ls="eza -lh --git --icons --git-repos"
 	alias pm="sudo pacman"
 	alias lgout="hyprctl dispatch exit"
 	alias mk="make -s"
@@ -40,10 +40,11 @@ archlinux() {
   alias fgrind="valgrind --leak-check=full"
   alias eza-bleeding="~/dev/rust/eza/target/debug/eza"
   alias build-eza="cd ~/dev/rust/eza/ && cargo build && cd -"
+	alias copy="xsel -ib"
 }
 
 fedora() {
-	alias ls="exa -lha --git"
+	alias ls="exa -lh --icons --git"
 	alias mk="make -s"
 	alias npmcheck='npm-check -u -E'
 }
@@ -80,3 +81,5 @@ export PAtH="$PATH:$HOME/.cabal/bin"
 export GPG_TTY=$(tty)
 
 if [ -e /home/fexkoser/.nix-profile/etc/profile.d/nix.sh ]; then . /home/fexkoser/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+
