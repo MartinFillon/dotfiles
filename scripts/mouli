@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build ~/.dotfiles/docker/. -t my-mouli
+
+docker run -it --rm -v $(pwd):/home/student/dev my-mouli:latest
