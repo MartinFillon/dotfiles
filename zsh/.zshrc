@@ -83,3 +83,4 @@ export GPG_TTY=$(tty)
 if [ -e /home/fexkoser/.nix-profile/etc/profile.d/nix.sh ]; then . /home/fexkoser/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 
+FILTER_BRANCH_SQUELCH_WARNING=1
