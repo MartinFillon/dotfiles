@@ -6,7 +6,7 @@ STOW ?= stow
 
 TARGET ?= $$HOME
 
-all: _zsh _hyprland _kitty
+all: _zsh _hyprland _kitty _wofi _wlogout _swaylock _BetterDiscord _cava _hayabusa _helix _htop _nix _nvim _waybar _yay _pulse 
 
 _zsh:
 	$(STOW) --target=$(TARGET) --restow zsh
@@ -67,7 +67,3 @@ _yay:
 
 _pulse:
 	$(STOW) --target=$(TARGET) --restow pulse
-
-
-_teams-for-linux:
-	$(STOW) --target=$(TARGET) --restow teams-for-linux
