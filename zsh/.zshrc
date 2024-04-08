@@ -41,6 +41,7 @@ archlinux() {
   alias eza-bleeding="~/dev/rust/eza/target/debug/eza"
   alias build-eza="cd ~/dev/rust/eza/ && cargo build && cd -"
 	alias copy="xsel -ib"
+	eval "$(zoxide init zsh)"
 }
 
 fedora() {
