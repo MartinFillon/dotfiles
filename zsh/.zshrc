@@ -74,7 +74,7 @@ export PATH="$PATH:/home/mfn/.local/share/coursier/bin"
 export PATH="$PATH:$HOME/.dotfiles/scripts"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.ghcup/bin"
-export PAtH="$PATH:$HOME/.cabal/bin"
+export PATH="$PATH:$HOME/.cabal/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
