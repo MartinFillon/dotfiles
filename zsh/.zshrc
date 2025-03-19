@@ -1,4 +1,3 @@
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -33,7 +32,6 @@ archlinux() {
 	alias lgout="hyprctl dispatch exit"
 	alias mk="make -s"
 	alias npmcheck='npm-check -u -E'
-  alias neofetch='hayabusa'
   export PACKAGE_LIST=$DOTFILES/packages.txt
 	export CONFIG_DIR=$HOME/.config
   alias fourmolu="$HOME/.cabal/bin/fourmolu -i"
@@ -86,3 +84,6 @@ if [ -e /home/fexkoser/.nix-profile/etc/profile.d/nix.sh ]; then . /home/fexkose
 FILTER_BRANCH_SQUELCH_WARNING=1
 export FPATH="$HOME/dev/zappy/completions/:$FPATH"
 compinit
+source /usr/share/nvm/init-nvm.sh
+export EMSDK_QUIET=1
+source "/home/fexkoser/dev/emsdk/emsdk_env.sh"
