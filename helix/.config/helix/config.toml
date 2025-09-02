@@ -3,3 +3,6 @@ theme = "onedark"
 [editor]
 line-number = "relative"
 mouse = false
+
+[keys.insert]
+"A-v" = [":insert-output echo '\\vec{}'", "collapse_selection"]
