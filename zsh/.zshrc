@@ -48,3 +48,14 @@ source /usr/share/nvm/init-nvm.sh
 export EMSDK_QUIET=1
 source "$DEV_HOME/emsdk/emsdk_env.sh"
 compinit
+
+[ -f "/home/fexkoser/.ghcup/env" ] && . "/home/fexkoser/.ghcup/env" # ghcup-env
+# pnpm
+export PNPM_HOME="/home/fexkoser/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+source <(kubectl completion zsh)

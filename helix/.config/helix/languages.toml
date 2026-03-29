@@ -12,6 +12,7 @@ comment-token = "--"
 block-comment-tokens = { start = "{-", end = "-}" }
 language-servers = [ "haskell-language-server" ]
 indent = { tab-width = 2, unit = "  " }
+formatter = { command = "fourmolu", args = ["--no-cabal"]}
 
 [[grammar]]
 name = "haskell"
