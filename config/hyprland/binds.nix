@@ -5,6 +5,11 @@ let
     "$mod, C, killactive"
     "$mod, F, fullscreen, 1"
     "$mod, TAB, workspace, e+1"
+    "$mod SHIFT, TAB, workspace, e-1"
+    "$mod, SPACE, exec, wofi"
+    "$mod, L, exec, hyprlock"
+    "$mod, S, exec, hyprshot -m region"
+    "$mod SHIFT, S, exec, hyprshot -m fullscreen"
   ];
 
   fr_mapping = [

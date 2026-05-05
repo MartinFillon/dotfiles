@@ -38,9 +38,14 @@
     hashedPassword = "$6$kT9luU0vpzTqg/Lj$cJhmeo1dqYxSeKbHWnIHPYqwHhBN7GtGZkg3ml8EaPw5pQD4ua1ejRal32oA8wJO7/nKp1FT/LTiPKfHiWTBQ1";
   };
 
-  services.getty = {
-    autologinUser = "fexkoser";
+  # services.getty = {
+  #   autologinUser = "fexkoser";
+  # };
+
+  services.displayManager.gdm = {
+    enable = true;
   };
+  services.displayManager.defaultSession = "hyprland";
 
   # System-wide packages
   environment.systemPackages = with pkgs; [
@@ -57,6 +62,7 @@
     enable = true;
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
     package = pkgs.hyprland;
+    xwayland.enable = true;
   };
 
   programs.zsh.enable = true;
