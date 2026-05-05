@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -42,6 +42,17 @@
     git
     curl
   ];
+
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal-hyprland"
+  ];
+
+  programs.hyprland = {
+    enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    package = pkgs.hyprland;
+  };
 
   programs.zsh.enable = true;
 
