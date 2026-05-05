@@ -1,3 +1,4 @@
 .vscode
 helix/.config/helix/runtime
 scripts/commit-other
+hardware-configuration.nix
