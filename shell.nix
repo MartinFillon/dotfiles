@@ -11,6 +11,7 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.nixos-rebuild
     pkgs.nixos-install-tools
+    pkgs.mkpasswd
   ];
 
   shellHook = ''

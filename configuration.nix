@@ -1,78 +1,48 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   imports = [
-    ./hardware-configuration.nix # This file is generated
-    ./home.nix
+    # This assumes you have a hardware-configuration.nix.
+    # If testing on Arch, you can comment this out for 'build' but
+    # 'build-vm' might need it.
+    ./hardware-configuration.nix
   ];
 
-  time.timeZone = "Europe/Paris";
-  i18n.defaultLocale = "fr_FR.UTF-8";
-  services.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
+  # Enable Flakes and the 'nix' command
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-  users.users.fexkoser = {
+  # Basic System Setup
+  networking.hostName = "laptop";
+  time.timeZone = "Europe/Paris";
+
+  # Define your user account
+  users.users."fexkoser" = {
     isNormalUser = true;
     extraGroups = [
       "wheel"
       "networkmanager"
     ];
+    shell = pkgs.zsh;
+    hashedPassword = "$6$kT9luU0vpzTqg/Lj$cJhmeo1dqYxSeKbHWnIHPYqwHhBN7GtGZkg3ml8EaPw5pQD4ua1ejRal32oA8wJO7/nKp1FT/LTiPKfHiWTBQ1";
   };
+
+  services.getty = {
+    autologinUser = "fexkoser";
+  };
+  # System-wide packages
+  environment.systemPackages = with pkgs; [
+    helix
+    git
+    curl
+  ];
 
   programs.zsh.enable = true;
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtensions = "backup";
-    extraSpecialArgs = { inherit pkgs pkgs-unstable; };
-    user.fexkoser = { ... }: { };
-  };
 
-  nix.settings = {
-    trusted-users = [
-      "root"
-      "fexkoser"
-    ];
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    download-buffer-size = 134217728; # 128 MiB
-
-    keep-outputs = true;
-    keep-derivations = true;
-  };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
-  };
-
-  # User-level systemd service for nix garbage collection
-  systemd.user.services.nix-gc-user = {
-    description = "Nix Garbage Collector (User)";
-    script = "${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 3d";
-    serviceConfig = {
-      Type = "oneshot";
-      User = "fexkoser";
-    };
-  };
-
-  environment.systemPackages = with pkgs; [
-    git
-    helix
-  ];
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken.
+  system.stateVersion = "25.11";
 }
