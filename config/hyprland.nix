@@ -6,6 +6,10 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      exec-once = [
+        "waybar"
+      ];
+
       "$mod" = "SUPER";
 
       bind = import ./hyprland/binds.nix { mapping = mapping; };
@@ -17,7 +21,7 @@ in
       decoration = import ./hyprland/decoration.nix { };
       animations = import ./hyprland/animations.nix { };
 
-      monitor = ",1920x1080@60,0x0,1";
+      # monitor = ",auto,0x0,1";
     };
     extraConfig = ''
       dwindle {
