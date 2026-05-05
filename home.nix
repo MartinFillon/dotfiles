@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }:
@@ -9,6 +8,8 @@
     ./config/zsh.nix
     ./config/git.nix
     ./config/helix.nix
+    ./config/hyprland.nix
+    ./config/kitty.nix
   ];
 
   home.username = "fexkoser";
@@ -17,6 +18,7 @@
   home.packages = with pkgs; [
     htop
     nixfmt
+    eza
   ];
 
   programs.home-manager = {
