@@ -17,6 +17,10 @@
   # Basic System Setup
   networking.hostName = "laptop";
   time.timeZone = "Europe/Paris";
+  services.xserver = {
+    xkb.layout = "fr";
+  };
+  console.useXkbConfig = true;
 
   # Define your user account
   users.users."fexkoser" = {
@@ -32,9 +36,9 @@
   services.getty = {
     autologinUser = "fexkoser";
   };
+
   # System-wide packages
   environment.systemPackages = with pkgs; [
-    helix
     git
     curl
   ];

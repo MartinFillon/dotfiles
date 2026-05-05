@@ -2,9 +2,6 @@
   pkgs ? import <nixpkgs> { },
 }:
 
-let
-  configPath = ./configuration.nix;
-in
 pkgs.mkShell {
   name = "nixos-test-env";
 
@@ -15,13 +12,6 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    # Check if the config file actually exists before setting NIX_PATH
-    if [ ! -f "${toString configPath}" ]; then
-      echo "⚠️  Error: configuration.nix not found in this directory!"
-    else
-      export NIX_PATH="nixpkgs=${pkgs.path}:nixos-config=${toString configPath}"
-      echo "✅ NixOS environment ready."
-      echo "Try running: nixos-rebuild build"
-    fi
+    export NIX_SSL_CERT_FILE=/etc/ssl/cert.pem
   '';
 }
