@@ -1,0 +1,10 @@
+{ ... }:
+{
+  gaps_in = 5;
+  gaps_out = 20;
+  border_size = 2;
+  "col.active_border" = "rgb(cdd6f4)";
+  "col.inactive_border" = "rgba(595959aa)";
+
+  layout = "dwindle";
+}
