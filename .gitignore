@@ -2,3 +2,5 @@
 helix/.config/helix/runtime
 scripts/commit-other
 hardware-configuration.nix
+result
+*.qcow2
