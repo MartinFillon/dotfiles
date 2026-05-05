@@ -19,5 +19,14 @@ in
 
       monitor = ",1920x1080@60,0x0,1";
     };
+    extraConfig = ''
+      dwindle {
+        pseudotile = yes
+        preserve_split = yes
+      }
+      ecosystem {
+        no_donation_nag = true;
+      }
+    '';
   };
 }
