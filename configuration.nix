@@ -14,6 +14,11 @@
     "flakes"
   ];
 
+  virtualisation.vmVariant = {
+    virtualisation.memorySize = 4096;
+    virtualisation.cores = 2;
+  };
+
   # Basic System Setup
   networking.hostName = "laptop";
   time.timeZone = "Europe/Paris";
