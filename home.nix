@@ -13,6 +13,7 @@
     ./config/wofi.nix
     ./config/waybar.nix
     ./config/hyprlock.nix
+    ./config/wlogout.nix
   ];
 
   home.username = "fexkoser";
