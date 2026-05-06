@@ -10,6 +10,7 @@ let
     "$mod, L, exec, hyprlock"
     "$mod, S, exec, hyprshot -m region"
     "$mod SHIFT, S, exec, hyprshot -m fullscreen"
+    "$mod, M, exec, wlogout"
   ];
 
   fr_mapping = [
