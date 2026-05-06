@@ -23,6 +23,7 @@
     nixfmt
     eza
     hyprshot
+    floorp-bin
   ];
 
   programs.home-manager = {
