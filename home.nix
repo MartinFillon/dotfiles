@@ -11,6 +11,8 @@
     ./config/hyprland.nix
     ./config/kitty.nix
     ./config/wofi.nix
+    ./config/waybar.nix
+    ./config/hyprlock.nix
   ];
 
   home.username = "fexkoser";
@@ -21,7 +23,6 @@
     nixfmt
     eza
     hyprshot
-    waybar
   ];
 
   programs.home-manager = {

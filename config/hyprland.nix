@@ -11,7 +11,9 @@ in
       ];
 
       "$mod" = "SUPER";
-
+      cursor = {
+        enable_hyprcursor = false;
+      };
       bind = import ./hyprland/binds.nix { mapping = mapping; };
       input = import ./hyprland/input.nix { mapping = mapping; };
       general = import ./hyprland/general.nix { };
@@ -20,7 +22,6 @@ in
       };
       decoration = import ./hyprland/decoration.nix { };
       animations = import ./hyprland/animations.nix { };
-
       # monitor = ",auto,0x0,1";
     };
     extraConfig = ''
