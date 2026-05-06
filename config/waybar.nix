@@ -3,23 +3,23 @@
   programs.waybar = {
     enable = true;
     package = pkgs.waybar;
-    config = {
-      layer = "top";
-      position = "top";
-      height = 50;
-      modules-left = [
-        "clock"
-        "hyprland/workspaces"
-      ];
-      modules-center = [ "hyprland/window" ];
-      modules-right = [
-        "network"
-        "bluetooth"
-        "temperature"
-        "battery"
-        "tray"
-      ];
-      modules = {
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        height = 50;
+        modules-left = [
+          "clock"
+          "hyprland/workspaces"
+        ];
+        modules-center = [ "hyprland/window" ];
+        modules-right = [
+          "network"
+          "bluetooth"
+          "temperature"
+          "battery"
+          "tray"
+        ];
         "hyprland/window" = {
           format = "{}";
         };
