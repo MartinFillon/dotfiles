@@ -7,8 +7,10 @@ in
     enable = true;
     configType = "lua";
     extraLuaFiles = {
-      "main.lua" = ./hyprland/config.lua;
-      autoLoad = true;
+      "main.lua" = {
+        content = ./hyprland/config.lua;
+        autoLoad = true;
+      };
     };
     # settings = {
     #   exec-once = [
