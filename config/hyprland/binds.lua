@@ -2,7 +2,7 @@ local mainMod = "SUPER"
 
 -- Basic Apps & Actions
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("kitty"))
-hl.bind(mainMod .. " + C", hl.dsp.window.kill())
+hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wlogout --protocol layer-shell"))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exit())

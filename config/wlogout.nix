@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.wlogout = {
     enable = true;
@@ -64,27 +64,27 @@
       }
 
       #lock {
-          background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+          background-image: image(url("/${pkgs.wlogout}/share/wlogout/icons/lock.png"));
       }
 
       #logout {
-          background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+          background-image: image(url("/${pkgs.wlogout}/share/wlogout/icons/logout.png"));
       }
 
       #suspend {
-          background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+          background-image: image(url("/${pkgs.wlogout}/share/wlogout/icons/suspend.png"));
       }
 
       #hibernate {
-          background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+          background-image: image(url("/${pkgs.wlogout}/share/wlogout/icons/hibernate.png"));
       }
 
       #shutdown {
-          background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+          background-image: image(url("/${pkgs.wlogout}/share/wlogout/icons/shutdown.png"));
       }
 
       #reboot {
-          background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+          background-image: image(url("/${pkgs.wlogout}/share/wlogout/icons/reboot.png"));
       }
     '';
   };
