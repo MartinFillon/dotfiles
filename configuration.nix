@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
     ];
 
-  nix.settings.eperimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -75,7 +75,7 @@
   	curl
   ];
 
-  environments.pathsToLink = [
+  environment.pathsToLink = [
     "/share/applications"
     "/share/xdg-desktop-portal-hyprland"
   ];

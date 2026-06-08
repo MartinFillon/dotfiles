@@ -5,6 +5,7 @@ in
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
     settings = {
       exec-once = [
         "waybar"
@@ -22,7 +23,7 @@ in
       };
       decoration = import ./hyprland/decoration.nix { };
       animations = import ./hyprland/animations.nix { };
-      # monitor = ",auto,0x0,1";
+      monitor = "eDP-1,1920x1080@60,0x0,1";
     };
     extraConfig = ''
       dwindle {
