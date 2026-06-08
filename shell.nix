@@ -8,6 +8,7 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.hyprland
     pkgs.nixfmt
+    pkgs.nixd
   ];
 
   shellHook = ''

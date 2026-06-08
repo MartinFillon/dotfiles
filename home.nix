@@ -30,6 +30,7 @@
     discord
     adwaita-icon-theme
     gnome-themes-extra
+    alsa-utils
   ];
 
   home.pointerCursor = {
