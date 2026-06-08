@@ -64,6 +64,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     shell = pkgs.zsh;
   };
@@ -100,6 +101,12 @@
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
     ];
+  };
+
+  # Virtualisation
+
+  virtualisation.docker = {
+    enable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
