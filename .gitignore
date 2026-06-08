@@ -4,3 +4,4 @@ scripts/commit-other
 !hardware-configuration.nix
 result
 *.qcow2
+.luarc.json

@@ -6,12 +6,16 @@ pkgs.mkShell {
   name = "nixos-test-env";
 
   buildInputs = [
-    pkgs.nixos-rebuild
-    pkgs.nixos-install-tools
-    pkgs.mkpasswd
+    pkgs.hyprland
   ];
 
   shellHook = ''
-    export NIX_SSL_CERT_FILE=/etc/ssl/cert.pem
+    echo "{
+  \"workspace\": {
+    \"library\": [
+      \"${pkgs.hyprland}/share/hypr/stubs\"
+    ]
+  }
+}" > .luarc.json 
   '';
 }
