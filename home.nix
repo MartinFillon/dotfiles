@@ -14,6 +14,7 @@
     ./config/waybar.nix
     ./config/hyprlock.nix
     ./config/wlogout.nix
+    ./config/vscode.nix
   ];
 
   home.username = "fexkoser";
@@ -49,6 +50,15 @@
 
   programs.home-manager = {
     enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   home.stateVersion = "26.05";

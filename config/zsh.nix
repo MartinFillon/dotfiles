@@ -4,7 +4,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      ls = "eza --color=auto -la --icons";
+      ls = "eza --color=auto -la --icons --git";
       helix = "hx";
     };
     oh-my-zsh = {

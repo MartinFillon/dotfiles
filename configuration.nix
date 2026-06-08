@@ -28,6 +28,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.extraHosts = "51.91.98.75 vps-d7439b29";
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
