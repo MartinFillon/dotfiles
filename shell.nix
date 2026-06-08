@@ -7,15 +7,16 @@ pkgs.mkShell {
 
   buildInputs = [
     pkgs.hyprland
+    pkgs.nixfmt
   ];
 
   shellHook = ''
-    echo "{
-  \"workspace\": {
-    \"library\": [
-      \"${pkgs.hyprland}/share/hypr/stubs\"
-    ]
-  }
-}" > .luarc.json 
+        echo "{
+      \"workspace\": {
+        \"library\": [
+          \"${pkgs.hyprland}/share/hypr/stubs\"
+        ]
+      }
+    }" > .luarc.json 
   '';
 }

@@ -20,11 +20,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -67,6 +63,15 @@
       "docker"
     ];
     shell = pkgs.zsh;
+  };
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
+  boot.kernel.sysctl = {
+    "fs.inotify.max_user_watches" = "524288"; # Default is often 8192
+    "fs.file-max" = "524288"; # Also good to increase overall open files
   };
 
   # Allow unfree packages
