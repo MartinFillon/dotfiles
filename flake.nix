@@ -16,7 +16,7 @@
       ...
     }@inputs:
     {
-      nixosConfigurations."laptop" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
