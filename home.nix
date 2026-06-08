@@ -25,7 +25,19 @@
     eza
     hyprshot
     floorp-bin
+    bluetui
+    discord
+    adwaita-icon-theme
+    gnome-themes-extra
   ];
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
 
   programs.home-manager = {
     enable = true;
