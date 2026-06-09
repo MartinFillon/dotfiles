@@ -15,9 +15,12 @@
       home-manager,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
         };
@@ -31,6 +34,28 @@
             home-manager.users."fexkoser" = import ./home.nix;
           }
         ];
+      };
+
+      devShells.${system} = {
+        default = pkgs.mkShell {
+          name = "nixos-test-env";
+
+          packages = [
+            pkgs.hyprland
+            pkgs.nixfmt
+            pkgs.nixd
+          ];
+
+          shellHook = ''
+                echo "{
+              \"workspace\": {
+                \"library\": [
+                  \"${pkgs.hyprland}/share/hypr/stubs\"
+                ]
+              }
+            }" > .luarc.json 
+          '';
+        };
       };
     };
 }
