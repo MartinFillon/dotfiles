@@ -23,6 +23,7 @@
         };
         modules = [
           ./configuration.nix
+          ./hosts/laptop.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
