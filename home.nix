@@ -31,6 +31,7 @@
     adwaita-icon-theme
     gnome-themes-extra
     alsa-utils
+    dunst
   ];
 
   home.pointerCursor = {
