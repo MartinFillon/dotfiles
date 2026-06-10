@@ -1,5 +1,5 @@
 {
-  description = "Configuration";
+  description = "Dotfiles";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
@@ -40,10 +40,10 @@
         default = pkgs.mkShell {
           name = "nixos-test-env";
 
-          packages = [
-            pkgs.hyprland
-            pkgs.nixfmt
-            pkgs.nixd
+          packages = with pkgs; [
+            hyprland
+            nixfmt
+            nixd
           ];
 
           shellHook = ''

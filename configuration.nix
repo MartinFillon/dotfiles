@@ -2,21 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  # imports = [
-  #   # Include the results of the hardware scan.
-  #   ./hardware-configuration.nix
-  # ];
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
