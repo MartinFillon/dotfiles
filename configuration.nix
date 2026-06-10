@@ -85,6 +85,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     curl
+    direnv
   ];
 
   environment.pathsToLink = [
