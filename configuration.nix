@@ -85,8 +85,13 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     curl
-    direnv
   ];
+
+  programs.steam = {
+    enable = true;
+  };
+
+  programs.nix-ld.enable = true;
 
   environment.pathsToLink = [
     "/share/applications"
