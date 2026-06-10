@@ -32,6 +32,8 @@
     gnome-themes-extra
     alsa-utils
     dunst
+    steam
+    direnv
   ];
 
   home.pointerCursor = {
@@ -51,10 +53,6 @@
   };
 
   programs.home-manager = {
-    enable = true;
-  };
-
-  programs.direnv = {
     enable = true;
   };
 
