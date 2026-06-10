@@ -31,7 +31,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users."fexkoser" = import ./home.nix;
+            home-manager.users."fexkoser" = import ./home/home.nix;
           }
         ];
       };
