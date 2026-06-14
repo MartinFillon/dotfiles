@@ -96,6 +96,7 @@
   environment.pathsToLink = [
     "/share/applications"
     "/share/xdg-desktop-portal-hyprland"
+    "/share/zsh"
   ];
 
   programs.hyprland = {

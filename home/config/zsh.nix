@@ -20,5 +20,6 @@
     autosuggestion = {
       enable = true;
     };
+    completionInit = "autoload -U compinit && compinit";
   };
 }
