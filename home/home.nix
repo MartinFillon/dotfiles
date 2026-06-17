@@ -27,11 +27,15 @@
     hyprshot
     floorp-bin
     bluetui
+    jq
+    nixd
+    nixfmt
     discord
     adwaita-icon-theme
     gnome-themes-extra
     alsa-utils
     dunst
+    insomnia
   ];
 
   home.pointerCursor = {
