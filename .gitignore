@@ -5,3 +5,4 @@ scripts/commit-other
 result
 *.qcow2
 .luarc.json
+.direnv
