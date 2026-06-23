@@ -18,6 +18,8 @@
           "bluetooth"
           "temperature"
           "battery"
+          "pulseaudio"
+          "pulseaudio#microphone"
           "tray"
         ];
         "hyprland/window" = {
@@ -64,6 +66,62 @@
           format = "{temperatureC}°C ";
           critical-threshold = 80;
           format-critical = "{temperatureC}°C ";
+        };
+
+        battery = {
+          states = {
+            good = 95;
+            warning = 30;
+            critical = 20;
+          };
+          format = "{icon} {capacity}%";
+          format-charging = " {capacity}%";
+          format-plugged = " {capacity}%";
+          format-alt = "{time} {icon}";
+          format-icons = [
+            "󰂎"
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+        };
+        pulseaudio = {
+          format = "{icon} {volume}%";
+          tooltip = false;
+          format-muted = " Muted";
+          on-click = "pamixer -t";
+          on-scroll-up = "pamixer -i 5";
+          on-scroll-down = "pamixer -d 5";
+          scroll-step = 5;
+          format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = [
+              ""
+              ""
+              ""
+            ];
+          };
+        };
+        "pulseaudio#microphone" = {
+          format = "{format_source}";
+          format-source = " {volume}%";
+          format-source-muted = " Muted";
+          on-click = "pamixer --default-source -t";
+          on-scroll-up = "pamixer --default-source -i 5";
+          on-scroll-down = "pamixer --default-source -d 5";
+          scroll-step = 5;
         };
       };
     };
