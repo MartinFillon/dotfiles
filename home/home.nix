@@ -2,7 +2,10 @@
   pkgs,
   ...
 }:
-
+let
+  username = "fexkoser";
+  homeDirectory = "/home/${username}";
+in
 {
   imports = [
     ./config/zsh.nix
@@ -17,14 +20,13 @@
     ./config/vscode.nix
   ];
 
-  home.username = "fexkoser";
-  home.homeDirectory = "/home/fexkoser";
+  home.username = username;
+  home.homeDirectory = homeDirectory;
 
   home.packages = with pkgs; [
     htop
     nixfmt
     eza
-    hyprshot
     floorp-bin
     bluetui
     jq
@@ -37,6 +39,11 @@
     dunst
     insomnia
   ];
+
+  programs.hyprshot = {
+    enable = true;
+    saveLocation = "${homeDirectory}/screenshots";
+  };
 
   home.pointerCursor = {
     gtk.enable = true;
