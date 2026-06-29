@@ -38,6 +38,7 @@ in
     alsa-utils
     dunst
     insomnia
+    wl-clipboard
   ];
 
   programs.hyprshot = {
