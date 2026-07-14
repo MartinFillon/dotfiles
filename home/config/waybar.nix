@@ -96,9 +96,9 @@
           format = "{icon} {volume}%";
           tooltip = false;
           format-muted = " Muted";
-          on-click = "pamixer -t";
-          on-scroll-up = "pamixer -i 5";
-          on-scroll-down = "pamixer -d 5";
+          on-click = "amixer set Master toggle";
+          on-scroll-up = "amixer set Master 5%+";
+          on-scroll-down = "amixer set Master 5%-";
           scroll-step = 5;
           format-icons = {
             headphone = "";
