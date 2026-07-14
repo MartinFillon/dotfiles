@@ -39,6 +39,11 @@ in
     dunst
     insomnia
     wl-clipboard
+    (prismlauncher.override {
+      jdks = [
+        pkgs.jdk25
+      ];
+    })
   ];
 
   programs.hyprshot = {
