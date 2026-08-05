@@ -18,6 +18,7 @@ in
     ./config/hyprlock.nix
     ./config/wlogout.nix
     ./config/vscode.nix
+    ./config/ssh.nix
   ];
 
   home.username = username;
