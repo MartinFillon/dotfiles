@@ -11,6 +11,9 @@
       push = {
         autoSetupRemote = true;
       };
+      pull = {
+        rebase = true;
+      };
     };
     lfs.enable = true;
   };
