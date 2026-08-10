@@ -24,7 +24,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.extraHosts = "51.91.98.75 vps-d7439b29";
+  networking.extraHosts = "92.222.226.198 terraformid-670";
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
