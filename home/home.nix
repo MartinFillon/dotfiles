@@ -45,6 +45,7 @@ in
         pkgs.jdk25
       ];
     })
+    gh
   ];
 
   programs.hyprshot = {
