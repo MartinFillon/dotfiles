@@ -3,7 +3,9 @@ hl.config({
         kb_layout = "fr",
         follow_mouse = 1,
         touchpad = {
-            natural_scroll = false
+            tap_to_click = true,
+            natural_scroll = false,
+            tap_and_drag = true
         },
         sensitivity = 0
     },
