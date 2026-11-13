@@ -46,6 +46,7 @@ in
       ];
     })
     gh
+    antigravity-cli
   ];
 
   programs.hyprshot = {

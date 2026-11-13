@@ -7,7 +7,9 @@ hl.config({
             natural_scroll = false,
             tap_and_drag = true
         },
-        sensitivity = 0
+        sensitivity = 0,
+        scroll_method = "on_button_down",
+        scroll_button = 274,
     },
     general = {
         gaps_in = 5,
@@ -51,6 +53,7 @@ hl.config({
         preserve_split = true
     },
     misc = {
+        middle_click_paste = false,
         disable_hyprland_logo = true
     }
 })
