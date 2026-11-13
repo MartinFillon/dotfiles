@@ -44,7 +44,7 @@ for _, ws in ipairs(workspaces) do
     hl.bind(mainMod .. " + ALT + " .. key, hl.dsp.window.move({ workspace = id, follow = false }))
 end
 
--- hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.workspace.swap_monitors())
+hl.bind("SUPER + SHIFT + Tab", hl.dsp.workspace.move({ monitor = "+1" }))
 
 -- Mouse bindings
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())

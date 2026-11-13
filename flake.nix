@@ -16,25 +16,39 @@
       ...
     }@inputs:
     let
+      lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      hosts = [
+        {
+          name = "laptop";
+          stateVersion = "25.11";
+        }
+      ];
+      mkOs = host: {
+        name = host.name;
+        value = lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+            hostName = host.name;
+            stateVersion = host.stateVersion;
+          };
+          modules = [
+            ./configuration.nix
+            ./hosts/${host.name}.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users."fexkoser" = import ./home/home.nix;
+            }
+          ];
+        };
+      };
     in
     {
-      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          ./configuration.nix
-          ./hosts/laptop.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users."fexkoser" = import ./home/home.nix;
-          }
-        ];
-      };
+      nixosConfigurations = builtins.listToAttrs (map mkOs hosts);
 
       devShells.${system} = {
         default = pkgs.mkShell {
