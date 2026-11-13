@@ -2,7 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, hostName, stateVersion, ... }:
+{
+  pkgs,
+  hostName,
+  stateVersion,
+  gpu,
+  ...
+}:
 
 {
   nix.settings.experimental-features = [
@@ -16,8 +22,9 @@
     enable = true;
     device = "nodev";
     efiSupport = true;
+    efiInstallAsRemovable = true;
   };
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = hostName; # Define your hostname.
   networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
@@ -77,9 +84,21 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  services.displayManager.gdm = {
+  services.xserver.enable = true;
+
+  services.displayManager.sddm = {
     enable = true;
+
+    wayland = {
+      enable = true;
+    };
   };
+
+  hardware.graphics.enable = gpu;
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.enableAllFirmware = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

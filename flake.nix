@@ -23,6 +23,12 @@
         {
           name = "laptop";
           stateVersion = "25.11";
+          gpu = false;
+        }
+        {
+          name = "desktop";
+          stateVersion = "26.05";
+          gpu = true;
         }
       ];
       mkOs = host: {
@@ -33,6 +39,7 @@
             inherit inputs;
             hostName = host.name;
             stateVersion = host.stateVersion;
+            gpu = host.gpu;
           };
           modules = [
             ./configuration.nix
