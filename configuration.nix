@@ -7,6 +7,7 @@
   hostName,
   stateVersion,
   gpu,
+  vncServer,
   ...
 }:
 {
@@ -14,9 +15,9 @@
     (import ./configuration/network.nix { hostName = hostName; })
     ./configuration/nix.nix
     ./configuration/boot.nix
+    import
+    ./configuration/avahi.nix
   ];
-
-  # boot.loader.efi.canTouchEfiVariables = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -80,10 +81,24 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    curl
-    sddm-astronaut
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      curl
+      sddm-astronaut
+    ]
+    ++ lib.optionals (!vncServer) [
+      tigervnc
+      cage
+
+      (writeTextDir "share/wayland-sessions/vnc-client.desktop" ''
+        [Desktop Entry]
+        Name=Second Screen (VNC)
+        Comment=Connect to Desktop PC
+        Exec=cage -s -- vncviewer -FullScreen -Shared desktop.local
+        Type=Application
+      '')
+    ];
 
   programs.steam = {
     enable = true;

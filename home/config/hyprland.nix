@@ -5,7 +5,11 @@
     configType = "lua";
     extraLuaFiles = {
       "main.lua" = {
-        content = ./hyprland/config.lua;
+        content = ''
+          IS_VNC_SERVER = ${if vncServer then "true" else "false"}
+
+          ${builtins.readFile ./hyprland/config.lua}
+        '';
         autoLoad = true;
       };
 

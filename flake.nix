@@ -29,7 +29,7 @@
           name = "laptop";
           username = "fexkoser";
           stateVersion = "25.11";
-          gpu = false;
+          gpu = true;
         }
         {
           name = "desktop";

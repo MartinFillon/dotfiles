@@ -25,31 +25,31 @@ in
   home.username = username;
   home.homeDirectory = homeDirectory;
 
-  home.packages = with pkgs; [
-    htop
-    nixfmt
-    eza
-    floorp-bin
-    bluetui
-    jq
-    nixd
-    nixfmt
-    discord
-    adwaita-icon-theme
-    gnome-themes-extra
-    alsa-utils
-    dunst
-    insomnia
-    wl-clipboard
-    (prismlauncher.override {
-      jdks = [
-        pkgs.jdk25
-      ];
-    })
-    # gh
-    # antigravity-cli
-    wayvnc
-  ];
+  home.packages =
+    with pkgs;
+    [
+      htop
+      nixfmt
+      eza
+      floorp-bin
+      bluetui
+      jq
+      nixd
+      nixfmt
+      discord
+      adwaita-icon-theme
+      gnome-themes-extra
+      alsa-utils
+      dunst
+      insomnia
+      wl-clipboard
+      (prismlauncher.override {
+        jdks = [
+          pkgs.jdk25
+        ];
+      })
+    ]
+    ++ (if vncServer then [ wayvnc ] else [ ]);
 
   programs.hyprshot = {
     enable = true;
