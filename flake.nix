@@ -18,7 +18,12 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
       hosts = [
         {
           name = "laptop";
@@ -37,7 +42,6 @@
       mkOs = host: {
         name = host.name;
         value = lib.nixosSystem {
-          system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
             hostName = host.name;
@@ -45,6 +49,8 @@
             gpu = host.gpu;
           };
           modules = [
+            { nixpkgs.pkgs = pkgs; }
+
             ./configuration.nix
             ./hosts/${host.name}.nix
             home-manager.nixosModules.home-manager

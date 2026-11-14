@@ -46,8 +46,8 @@ in
         pkgs.jdk25
       ];
     })
-    gh
-    antigravity-cli
+    # gh
+    # antigravity-cli
     wayvnc
   ];
 

@@ -12,21 +12,10 @@
 {
   imports = [
     (import ./configuration/network.nix { hostName = hostName; })
+    ./configuration/nix.nix
+    ./configuration/boot.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-  };
   # boot.loader.efi.canTouchEfiVariables = true;
 
   # Set your time zone.
@@ -71,14 +60,6 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
-
-  boot.kernel.sysctl = {
-    "fs.inotify.max_user_watches" = "524288"; # Default is often 8192
-    "fs.file-max" = "524288"; # Also good to increase overall open files
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   services.xserver.enable = true;
 
