@@ -1,9 +1,10 @@
 {
   pkgs,
+  username,
+  vncServer,
   ...
 }:
 let
-  username = "fexkoser";
   homeDirectory = "/home/${username}";
 in
 {
@@ -11,7 +12,7 @@ in
     ./config/zsh.nix
     ./config/git.nix
     ./config/helix.nix
-    ./config/hyprland.nix
+    (import ./config/hyprland.nix { vncServer = vncServer; })
     ./config/kitty.nix
     ./config/wofi.nix
     ./config/waybar.nix
@@ -47,6 +48,7 @@ in
     })
     gh
     antigravity-cli
+    wayvnc
   ];
 
   programs.hyprshot = {

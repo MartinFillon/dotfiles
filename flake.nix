@@ -22,6 +22,7 @@
       hosts = [
         {
           name = "laptop";
+          username = "fexkoser";
           stateVersion = "25.11";
           gpu = false;
         }
@@ -29,6 +30,8 @@
           name = "desktop";
           stateVersion = "26.05";
           gpu = true;
+          vncServer = true;
+          username = "fexkoser";
         }
       ];
       mkOs = host: {
@@ -48,7 +51,11 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users."fexkoser" = import ./home/home.nix;
+              home-manager.users.${host.username} = import ./home/home.nix {
+                inherit pkgs;
+                username = host.username;
+                vncServer = host.vncServer ? false;
+              };
             }
           ];
         };

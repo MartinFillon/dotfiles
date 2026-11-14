@@ -1,7 +1,4 @@
-{ ... }:
-let
-  mapping = "fr";
-in
+{ vncServer, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
