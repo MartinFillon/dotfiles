@@ -38,7 +38,7 @@
               scale = 1;
             }
             {
-              output = "edP-1";
+              output = "eDP-1";
               mode = "1920x1080@60";
               position = "1920x0";
               scale = 1;
