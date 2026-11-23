@@ -15,7 +15,6 @@
     (import ./configuration/network.nix { hostName = hostName; })
     ./configuration/nix.nix
     ./configuration/boot.nix
-    import
     ./configuration/avahi.nix
   ];
 
@@ -71,6 +70,7 @@
       enable = true;
     };
     theme = "sddm-astronaut-theme";
+    extraPackages = [ pkgs.kdePackages.qtmultimedia ];
   };
 
   hardware.graphics.enable = gpu;
@@ -79,8 +79,6 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   hardware.enableAllFirmware = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages =
     with pkgs;
     [

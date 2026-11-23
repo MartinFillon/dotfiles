@@ -96,9 +96,9 @@
           format = "{icon} {volume}%";
           tooltip = false;
           format-muted = " Muted";
-          on-click = "amixer set Master toggle";
-          on-scroll-up = "amixer set Master 5%+";
-          on-scroll-down = "amixer set Master 5%-";
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
           scroll-step = 5;
           format-icons = {
             headphone = "";
@@ -118,9 +118,9 @@
           format = "{format_source}";
           format-source = " {volume}%";
           format-source-muted = " Muted";
-          on-click = "pamixer --default-source -t";
-          on-scroll-up = "pamixer --default-source -i 5";
-          on-scroll-down = "pamixer --default-source -d 5";
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-";
           scroll-step = 5;
         };
       };

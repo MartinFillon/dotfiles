@@ -30,6 +30,20 @@
           username = "fexkoser";
           stateVersion = "25.11";
           gpu = true;
+          monitors = [
+            {
+              output = "HDMI-A-1";
+              mode = "1920x1080@60";
+              position = "0x0";
+              scale = 1;
+            }
+            {
+              output = "edP-1";
+              mode = "1920x1080@60";
+              position = "1920x0";
+              scale = 1;
+            }
+          ];
         }
         {
           name = "desktop";
@@ -37,6 +51,14 @@
           gpu = true;
           vncServer = true;
           username = "fexkoser";
+          monitors = [
+            {
+              output = "HDMI-A-1";
+              mode = "1920x1080@60";
+              position = "0x0";
+              scale = 1;
+            }
+          ];
         }
       ];
       mkOs = host: {
@@ -47,6 +69,7 @@
             hostName = host.name;
             stateVersion = host.stateVersion;
             gpu = host.gpu;
+            vncServer = host.vncServer or false;
           };
           modules = [
             { nixpkgs.pkgs = pkgs; }
@@ -60,7 +83,9 @@
               home-manager.users.${host.username} = import ./home/home.nix {
                 inherit pkgs;
                 username = host.username;
-                vncServer = host.vncServer ? false;
+                vncServer = host.vncServer or false;
+                monitors = host.monitors or [ ];
+                lib = lib;
               };
             }
           ];

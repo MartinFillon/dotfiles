@@ -3,7 +3,7 @@
   username,
   vncServer,
   ...
-}:
+}@inputs:
 let
   homeDirectory = "/home/${username}";
 in
@@ -12,7 +12,7 @@ in
     ./config/zsh.nix
     ./config/git.nix
     ./config/helix.nix
-    (import ./config/hyprland.nix { vncServer = vncServer; })
+    (import ./config/hyprland.nix inputs)
     ./config/kitty.nix
     ./config/wofi.nix
     ./config/waybar.nix
@@ -39,7 +39,7 @@ in
       discord
       adwaita-icon-theme
       gnome-themes-extra
-      alsa-utils
+      wireplumber
       dunst
       insomnia
       wl-clipboard

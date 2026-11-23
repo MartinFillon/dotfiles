@@ -1,4 +1,9 @@
-{ vncServer, ... }:
+{
+  lib,
+  vncServer,
+  monitors,
+  ...
+}:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -7,6 +12,7 @@
       "main.lua" = {
         content = ''
           IS_VNC_SERVER = ${if vncServer then "true" else "false"}
+          MONITORS = ${lib.generators.toLua { } monitors}
 
           ${builtins.readFile ./hyprland/config.lua}
         '';

@@ -53,8 +53,8 @@ hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Sound & Brightness
-hl.bind("ALT + F2", hl.dsp.exec_cmd("amixer set Master 10%-"))
-hl.bind("ALT + F3", hl.dsp.exec_cmd("amixer set Master 10%+"))
-hl.bind("ALT + F1", hl.dsp.exec_cmd("amixer set Master toggle"))
+hl.bind("ALT + F2", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"))
+hl.bind("ALT + F3", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+"))
+hl.bind("ALT + F1", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind("ALT + F6", hl.dsp.exec_cmd("brightnessctl s 10%-"))
 hl.bind("ALT + F7", hl.dsp.exec_cmd("brightnessctl s 10%+"))
