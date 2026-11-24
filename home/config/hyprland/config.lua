@@ -25,7 +25,8 @@ local function stopVnc()
         return
     end
 
-    hl.exec_cmd([[killall wayvnc; hyprctl monitors all -j | jq -r '.[] | select(.name|startswith("HEADLESS-")) | .name' | while read -r n; do hyprctl output remove "$n"; done]])
+    hl.exec_cmd(
+        [[killall wayvnc; hyprctl monitors all -j | jq -r '.[] | select(.name|startswith("HEADLESS-")) | .name' | while read -r n; do hyprctl output remove "$n"; done]])
 end
 
 hl.on("monitor.added", function(monitor)
@@ -67,6 +68,8 @@ end)
 hl.on("config.reloaded", function()
     if (IS_VNC_SERVER) then
         stopVnc()
-        startVnc()
+        hl.timer(function()
+            startVnc()
+        end, { timeout = 1500, type = "oneshot" })
     end
 end)
