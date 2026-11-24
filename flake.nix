@@ -53,7 +53,7 @@
           username = "fexkoser";
           monitors = [
             {
-              output = "HDMI-A-1";
+              output = "DP-1";
               mode = "1920x1080@60";
               position = "0x0";
               scale = 1;
@@ -61,35 +61,13 @@
           ];
         }
       ];
-      mkOs = host: {
-        name = host.name;
-        value = lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            hostName = host.name;
-            stateVersion = host.stateVersion;
-            gpu = host.gpu;
-            vncServer = host.vncServer or false;
-          };
-          modules = [
-            { nixpkgs.pkgs = pkgs; }
-
-            ./configuration.nix
-            ./hosts/${host.name}.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.${host.username} = import ./home/home.nix {
-                inherit pkgs;
-                username = host.username;
-                vncServer = host.vncServer or false;
-                monitors = host.monitors or [ ];
-                lib = lib;
-              };
-            }
-          ];
-        };
+      mkOs = import ./functions/mkOs.nix {
+        inherit
+          inputs
+          lib
+          pkgs
+          home-manager
+          ;
       };
     in
     {
@@ -106,12 +84,16 @@
           ];
 
           shellHook = ''
-                echo "{
+                            echo "{
               \"workspace\": {
                 \"library\": [
                   \"${pkgs.hyprland}/share/hypr/stubs\"
                 ]
-              }
+              },
+              \"diagnostics.globals\": [
+                \"MONITORS\",
+                \"IS_VNC_SERVER\"
+              ]
             }" > .luarc.json 
           '';
         };

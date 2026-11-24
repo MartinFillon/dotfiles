@@ -48,6 +48,7 @@ in
           pkgs.jdk25
         ];
       })
+      psmisc
     ]
     ++ (if vncServer then [ wayvnc ] else [ ]);
 
