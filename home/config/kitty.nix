@@ -14,6 +14,7 @@
       url_style = "dotted";
       mouse_hide_wait = 2.0;
       auto_reload_config = -1; # Currently disable as it is opening inodes recursively infinitely
+      remember_window_size = "no";
     };
     themeFile = "Catppuccin-Mocha";
   };
